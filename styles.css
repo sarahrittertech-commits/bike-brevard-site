@@ -1,0 +1,251 @@
+/* Bike Brevard Map — landing page.
+   Colours and type come from the app icon and launch artwork
+   (Blue Ridge layers, cream, sunset peach; Bricolage Grotesque + Karla). */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("fonts/bricolage-grotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Karla";
+  src: url("fonts/karla.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --cream: #F6F3EC;
+  --cream-warm: #FFF4E0;
+  --sand: #F2E3C6;
+  --navy: #1F2A5A;
+  --indigo: #2D3870;
+  --ridge: #4A5596;
+  --ridge-mid: #8E90C4;
+  --lavender: #C6C2E0;
+  --peach: #F4A985;
+  --apricot: #F9CF98;
+  --rust: #A84F22;     /* the artwork's orange, darkened to read as text */
+  --gold: #E8B33A;
+  --line: #E2DCCE;
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --body: "Karla", system-ui, sans-serif;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--navy);
+  font: 400 1.0625rem/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--indigo); }
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0;
+}
+h2 { font-size: clamp(2rem, 4.4vw, 3rem); margin-bottom: 1.25rem; }
+h3 { font-size: 1.3rem; font-weight: 700; }
+p { margin: 0 0 1rem; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.narrow { max-width: 760px; }
+.band { padding: 88px 0; }
+.eyebrow {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.75rem;
+}
+.eyebrow-light { color: var(--apricot); }
+.lede { font-size: 1.2rem; max-width: 46rem; color: var(--ridge); }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Top bar */
+.topbar {
+  max-width: 1120px; margin: 0 auto; padding: 18px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--display); font-weight: 700; font-size: 1.1rem;
+  color: var(--navy); text-decoration: none;
+}
+.brand img { border-radius: 8px; }
+.topnav { display: flex; gap: 22px; font-size: 0.95rem; }
+.topnav a { color: var(--ridge); text-decoration: none; }
+.topnav a:hover { color: var(--navy); text-decoration: underline; }
+
+/* Hero */
+.hero {
+  max-width: 1120px; margin: 0 auto; padding: 40px 24px 24px;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;
+}
+.hero-name { display: flex; align-items: center; gap: 16px; margin-bottom: 0.75rem; }
+.hero-icon { width: 64px; height: 64px; border-radius: 15px; box-shadow: 0 6px 18px rgba(31, 42, 90, 0.18); flex: none; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+.hero-sub {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--ridge);
+  margin-bottom: 2rem;
+}
+.hero-photo { margin: 0; position: relative; justify-self: center; max-width: 440px; width: 100%; }
+.frame {
+  background: #fff; padding: 12px 12px 14px; border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(31, 42, 90, 0.22);
+  transform: rotate(1.5deg);
+}
+.frame img { border-radius: 12px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 60%; width: 100%; }
+.hero-photo figcaption {
+  text-align: center; font-size: 0.9rem; color: var(--ridge); margin-top: 18px;
+}
+.squirrel-hero { position: absolute; width: 64px; top: -46px; right: 18px; transform: rotate(4deg); }
+
+/* App Store button + status (appears twice) */
+.store { max-width: 30rem; }
+.store-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--navy); color: var(--cream-warm);
+  font-family: var(--body); font-weight: 700; font-size: 1rem;
+  padding: 14px 24px; border-radius: 999px; text-decoration: none;
+}
+a.store-btn:hover { background: var(--indigo); }
+.store-btn.is-soon { cursor: default; }
+.store-status { font-size: 0.92rem; color: var(--ridge); margin: 14px 0 0; }
+
+/* Mountain ridges between hero and the indigo band */
+.ridges { line-height: 0; margin-top: 40px; }
+.ridges svg { width: 100%; height: clamp(70px, 10vw, 160px); display: block; }
+
+/* Who it's for */
+.band-ridge { background: var(--ridge); color: var(--cream); padding-top: 56px; }
+.band-ridge h2 { color: #fff; }
+.who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.who-card {
+  background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius); padding: 28px 26px;
+  display: flex; flex-direction: column;
+}
+.who-card h3 { color: #fff; margin: 6px 0 14px; }
+.who-card p { color: #E9E7F4; font-size: 1rem; }
+.num { font-family: var(--display); font-weight: 700; color: var(--apricot); font-size: 1rem; }
+.featured {
+  margin-top: auto; margin-bottom: 0; padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16); font-size: 0.95rem;
+}
+.featured span {
+  display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--apricot); margin-bottom: 2px;
+}
+.phones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 64px; }
+.phones figure { margin: 0; text-align: center; }
+.phone {
+  max-width: 250px; margin: 0 auto; padding: 8px; background: var(--navy);
+  border-radius: 38px; box-shadow: 0 24px 50px rgba(18, 24, 56, 0.4);
+}
+.phone img { border-radius: 30px; width: 100%; }
+.phones figcaption { margin-top: 18px; font-family: var(--display); font-weight: 700; color: #fff; font-size: 1.05rem; }
+
+/* Timeline: a dashed path runs behind the cards, like the path in the artwork */
+.timeline {
+  list-style: none; margin: 48px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 32px;
+  position: relative;
+}
+.timeline li { position: relative; }
+.timeline img {
+  border-radius: var(--radius); aspect-ratio: 4 / 5; object-fit: cover; width: 100%;
+  box-shadow: 0 10px 28px rgba(31, 42, 90, 0.14); margin-bottom: 18px;
+}
+.timeline h3 { margin-bottom: 8px; }
+.timeline h3 span {
+  display: table; font-family: var(--body); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream-warm);
+  background: var(--ridge); border-radius: 999px; padding: 4px 10px; margin: 0 0 8px;
+}
+.timeline p { color: #3A4470; font-size: 1rem; }
+
+/* How we use the path */
+.band-warm { background: var(--cream-warm); }
+.use { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.ticks { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.ticks li { position: relative; padding: 0 0 14px 34px; }
+.ticks li::before {
+  content: ""; position: absolute; left: 0; top: 4px; width: 18px; height: 22px;
+  background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-44 -118 88 122'%3E%3Cpath d='M0 0 C-10 -22 -40 -46 -40 -74 A40 40 0 1 1 40 -74 C40 -46 10 -22 0 0 Z' fill='%23F07B72' stroke='%231F2A5A' stroke-width='9'/%3E%3Ccircle cx='0' cy='-74' r='14' fill='%23FFF4E0' stroke='%231F2A5A' stroke-width='7'/%3E%3C/svg%3E");
+}
+.use-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.use-photos img { border-radius: var(--radius); aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
+.use-photos img:first-child { grid-row: span 2; aspect-ratio: auto; height: 100%; }
+
+/* Helene: plain and quiet on purpose */
+.band-quiet { background: var(--navy); color: #E9E7F4; }
+.band-quiet h2 { color: #fff; }
+.band-quiet p { font-size: 1.12rem; }
+.closing-line { font-family: var(--display); font-weight: 700; color: #fff; font-size: 1.35rem; margin-top: 1.5rem; }
+
+/* Video */
+.video { position: relative; display: block; border-radius: var(--radius); overflow: hidden; box-shadow: 0 18px 44px rgba(31, 42, 90, 0.2); }
+.play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 72px; height: 72px; border-radius: 50%; background: rgba(31, 42, 90, 0.85); color: #fff;
+  display: grid; place-items: center;
+}
+.video:hover .play { background: var(--navy); }
+.caption { margin-top: 16px; color: var(--ridge); text-align: center; }
+
+/* Closing banner: the launch artwork, text set over its sunset sky */
+.closing { position: relative; background: #F4A985; overflow: hidden; }
+.closing-scene { width: 100%; }
+.closing-text { position: absolute; left: 0; right: 0; top: 0; max-width: 1120px; margin: 0 auto; padding: 5vw 24px 0; z-index: 1; }
+.closing h2 { font-size: clamp(1.8rem, 3.6vw, 3.2rem); max-width: 14em; color: var(--navy); }
+.closing .store-status { color: var(--navy); }
+
+/* Footer */
+.footer {
+  background: #5F6BA8; color: var(--cream); text-align: center;
+  padding: 28px 24px 36px; font-size: 0.92rem; position: relative;
+}
+.footer a { color: #fff; }
+.footer p { margin: 0; }
+.squirrel-foot { width: 40px; margin: 0 auto 10px; }
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 48px; }
+  .hero-photo { max-width: 380px; }
+  .who-grid, .phones { grid-template-columns: 1fr; }
+  .phones { gap: 48px; }
+  .timeline { grid-template-columns: repeat(2, 1fr); }
+  .use { grid-template-columns: 1fr; }
+  /* The sky is too short to hold text at this width, so the text sits above the art */
+  .closing-text { position: static; padding: 56px 24px 8px; }
+}
+
+/* Phone */
+@media (max-width: 560px) {
+  body { font-size: 1rem; }
+  .band { padding: 64px 0; }
+  .wrap, .hero, .topbar { padding-left: 16px; padding-right: 16px; }
+  .topnav { display: none; }
+  .hero { padding-top: 16px; }
+  .hero-icon { width: 52px; height: 52px; border-radius: 12px; }
+  .timeline { grid-template-columns: 1fr; }
+  .phone { max-width: 230px; }
+  .closing-text { padding: 48px 16px 8px; }
+}
