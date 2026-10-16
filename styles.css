@@ -125,7 +125,6 @@ p { margin: 0 0 1rem; }
   padding: 14px 24px; border-radius: 999px; text-decoration: none;
 }
 a.store-btn:hover { background: var(--indigo); }
-.store-btn.is-soon { cursor: default; }
 .store-status { font-size: 0.92rem; color: var(--ridge); margin: 14px 0 0; }
 
 /* Mountain ridges between hero and the indigo band */

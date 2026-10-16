@@ -22,36 +22,14 @@ python3 -m http.server 8765
 
 Then open http://127.0.0.1:8765 in a browser.
 
-## When Apple approves the app
+## The App Store link
 
-The "Coming soon" button and the status line appear **twice**: in the hero
-at the top and in the closing banner at the bottom. Each copy sits between
-these two comments in `index.html`:
-
-```html
-<!-- APP STORE LINK (1 of 2): ... -->
-...
-<!-- /APP STORE LINK (1 of 2) -->
-```
-
-In **both** places, replace everything between the comments with this,
-pasting in the real App Store URL:
-
-```html
-<div class="store">
-  <a class="store-btn" href="https://apps.apple.com/app/idXXXXXXXXXX">
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4 1-1.4 1.4-2.7 1.4-2.8-.1 0-2.6-1-2.6-4.2zM13.9 5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg>
-    Download on the App Store
-  </a>
-</div>
-```
-
-That turns the grey "coming soon" label into a real link and drops the
-"Submitted to the App Store…" line. Also change the closing banner heading
-(search for `closing-title`) from "coming soon to the App Store" to
-something like "Bike Brevard Map: now on the App Store".
-
-Commit and push to `main`; GitHub Pages republishes within a minute or two.
+The app is live at
+https://apps.apple.com/us/app/bike-brevard-map/id6816144426
+(approved October 2026). The link appears **twice** in `index.html`: the
+hero button at the top and the closing banner button at the bottom. Each sits
+between `<!-- APP STORE LINK (1 of 2) -->`-style comments, so if the URL ever
+changes, update both.
 
 ## Photos
 
