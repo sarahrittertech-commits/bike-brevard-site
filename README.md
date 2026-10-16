@@ -31,6 +31,26 @@ hero button at the top and the closing banner button at the bottom. Each sits
 between `<!-- APP STORE LINK (1 of 2) -->`-style comments, so if the URL ever
 changes, update both.
 
+## Parked: "When Helene came through"
+
+Taken off the page on 16 October 2026 to bring back later. It sat between
+"How we use the path" and the Heart of Brevard video. To restore it, paste
+this back into `index.html` just above `<!-- Featured video -->`. Its styles
+(`.band-quiet`, `.closing-line`) are still in `styles.css`.
+
+```html
+  <!-- Helene -->
+  <section class="band band-quiet">
+    <div class="wrap narrow">
+      <p class="eyebrow eyebrow-light">September 2024</p>
+      <h2>When Helene came through</h2>
+      <p>After Hurricane Helene we had no power, no gas, no cell service and no internet, and the radio news was out of date. But we had bikes and plenty of food to share.</p>
+      <p>So we rode. We checked on neighbors across town and delivered handwritten notes offering hot showers at our house. We dropped off supplies at the little free library boxes. We passed around handwritten news so friends knew where to find clean water, who could lend a camp stove, and that they could come stay with us.</p>
+      <p class="closing-line">Biking around town gave us the power to connect with our neighbors.</p>
+    </div>
+  </section>
+```
+
 ## Photos
 
 Photos are resized (1400px or less) and compressed (under 300 KB). They are

@@ -192,7 +192,7 @@ a.store-btn:hover { background: var(--indigo); }
 .use-photos img { border-radius: var(--radius); aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
 .use-photos img:first-child { grid-row: span 2; aspect-ratio: auto; height: 100%; }
 
-/* Helene: plain and quiet on purpose */
+/* Helene: plain and quiet on purpose. Section is parked (see README); styles kept for its return. */
 .band-quiet { background: var(--navy); color: #E9E7F4; }
 .band-quiet h2 { color: #fff; }
 .band-quiet p { font-size: 1.12rem; }
